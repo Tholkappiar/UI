@@ -21,7 +21,7 @@ const Hero = () => {
 			separation: 70.0,
 			alignment: 30.0,
 			cohesion: 20.0,
-			quantity: 4.0,
+			quantity: 3.0,
 		});
 	});
 	return (
@@ -31,20 +31,28 @@ const Hero = () => {
 				className="min-h-screen text-white select-none flex flex-col justify-center pt-40"
 			>
 				<div className="w-2/3 container mx-auto">
-					<div className="">
-						<span className="font-semibold text-7xl">Designing</span>{" "}
-						<span className="font-light text-4xl">a Better</span>
+					<div className="space-x-4">
+						<span className="font-bold text-4xl md:text-7xl font-Caveat">
+							Designing
+						</span>{" "}
+						<span className="font-light font-mono text-xl md:text-4xl">
+							a Better
+						</span>
 						<br />
-						<span className="font-semibold text-7xl">world</span>{" "}
-						<span className="font-light text-4xl">Today</span>
+						<span className="font-bold text-4xl md:text-7xl font-Caveat !ml-0">
+							world
+						</span>{" "}
+						<span className="font-light font-mono text-xl md:text-4xl">
+							Today
+						</span>
 					</div>
 					<p className="my-10 w-2/3 text-gray-600 ">
 						Welcome to our world of endless imagination and boundless
 						creativity. Together, lets embark on a remarkable journey where
 						dreams become tangible realities.
 					</p>
-					<div className="flex">
-						<div className="h-16 w-52 rounded-[40px] bg-[#FF9800] text-black font-mono font-medium mr-10 flex justify-center items-center">
+					<div className="flex flex-col md:flex-row">
+						<div className="h-16 w-52 rounded-[40px] bg-[#FF9800] hover:opacity-50 text-black font-mono font-medium mr-10 flex justify-center items-center">
 							<span className="">What we do ?</span>
 							<svg
 								xmlns="http://www.w3.org/2000/svg"
@@ -61,7 +69,7 @@ const Hero = () => {
 								/>
 							</svg>
 						</div>
-						<div className="h-16 w-52 rounded-[40px] text-white font-mono font-medium flex justify-center items-center">
+						<div className="h-16 w-52 rounded-[40px] text-white hover:opacity-50 font-mono font-medium flex justify-center items-center">
 							<span className="">View works</span>
 							<svg
 								xmlns="http://www.w3.org/2000/svg"
