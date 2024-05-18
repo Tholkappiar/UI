@@ -27,7 +27,7 @@ const Hero = () => {
 		ScrollReveal().reveal(".scroll", { delay: 500 });
 	});
 	return (
-		<div>
+		<div id="home">
 			<div
 				id="birds"
 				className="min-h-screen text-white select-none flex flex-col justify-center pt-40"
@@ -72,7 +72,7 @@ const Hero = () => {
 							</svg>
 						</div>
 						<div className="h-16 w-52 rounded-[40px] text-white hover:opacity-50 font-mono font-medium flex justify-center items-center">
-							<span className="">View works</span>
+							<span className="">Values</span>
 							<svg
 								xmlns="http://www.w3.org/2000/svg"
 								fill="none"

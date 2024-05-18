@@ -6,7 +6,7 @@ const About = () => {
 		ScrollReveal().reveal(".scroll", { delay: 500 });
 	});
 	return (
-		<div className="container mx-auto p-10">
+		<div className="container mx-auto p-10" id="values">
 			<img
 				src="/group_image.avif"
 				className="rounded-lg sm:h-[300px] lg:h-[400px] w-full object-cover scroll"
