@@ -1,38 +1,53 @@
 package com.todo.todo.Controller;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.*;
-import com.todo.todo.Model.TodoModel;
-import com.todo.todo.Service.TodoService;
 import java.util.List;
-import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.todo.todo.Model.Todo;
+import com.todo.todo.Service.TodoService;
 
 @RestController
 @RequestMapping("/api/todos")
-@CrossOrigin(origins = "*")
 public class TodoController {
 
     @Autowired
     private TodoService todoService;
 
     @GetMapping
-    public List<TodoModel> getAllTodos() {
+    public List<Todo> getAllTodos() {
         return todoService.getAllTodos();
     }
 
+    @GetMapping("/hello")
+    public String hello() {
+        return "Hello World!";
+    }
+
     @GetMapping("/{id}")
-    public Optional<TodoModel> getTodoById(@PathVariable Long id) {
-        return todoService.getTodoById(id);
+    public Todo getTodoById(@PathVariable Long id) {
+        return todoService.getTodoById(id)
+                .orElseThrow(() -> new RuntimeException("Todo not found with id " + id));
     }
 
     @PostMapping
-    public TodoModel createTodo(@RequestBody TodoModel todo) {
-        return todoService.createTodo(todo);
+    public Todo createTodo(@RequestBody Todo todo) {
+        todo.setCompleted(false);
+        return todoService.saveOrUpdate(todo);
     }
 
     @PutMapping("/{id}")
-    public TodoModel updateTodo(@PathVariable Long id, @RequestBody TodoModel todoDetails) {
-        return todoService.updateTodo(id, todoDetails);
+    public Todo updateTodo(@PathVariable Long id, @RequestBody Todo todo) {
+        todo.setId(id);
+        return todoService.saveOrUpdate(todo);
     }
 
     @DeleteMapping("/{id}")
