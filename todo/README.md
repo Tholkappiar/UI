@@ -11,10 +11,13 @@ This is a full-stack Todo App built with Spring Boot for the backend, React for 
 
 ### Backend
 
-- Java
 - Spring Boot
-- MySQL
 
+### DataBase
+
+- MySql
+
+  
 ### Frontend
 
 - React
