@@ -18,11 +18,11 @@ const DeleteModal = ({ modalStatus, setModal, deleteId, onDelete }) => {
 
 	return (
 		<div
-			className={`flex-col items-center justify-center h-screen w-screen fixed top-0 z-10 bg-gray-500 bg-opacity-75 transition-opacity  ${
+			className={`flex-col items-center justify-center h-screen w-screen fixed top-0 z-10 bg-gray-500 bg-opacity-75 transition-opacity ${
 				modalStatus ? "flex" : "hidden"
 			}`}
 		>
-			<div className="bg-white pt-10 w-1/4 flex flex-col justify-center items-center space-y-4 rounded-lg">
+			<div className="bg-white pt-10 w-full sm:w-1/2 md:w-1/2 max-w-[550px] flex flex-col justify-center items-center space-y-4 rounded-lg">
 				<div className="flex flex-col items-center justify-center w-full">
 					<div className="flex space-x-6">
 						<div className="rounded-full bg-red-100 size-8 flex justify-center items-center">

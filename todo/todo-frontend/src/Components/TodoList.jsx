@@ -78,9 +78,9 @@ const TodoList = () => {
 
 	return (
 		<>
-			<div className="container mx-auto flex flex-col justify-between items-center p-20">
+			<div className="container mx-auto flex flex-col justify-between items-center lg:p-20 p-2">
 				<p className="text-5xl font-semibold text-center">Todo</p>
-				<div className="flex justify-center m-4 space-x-4">
+				<div className="flex flex-col md:flex-row justify-center items-center m-4 space-x-4">
 					<input
 						type="text"
 						name="task"
@@ -91,22 +91,25 @@ const TodoList = () => {
 					/>
 					<button
 						onClick={AddData}
-						className="p-2 w-20 bg-blue-400 rounded-lg text-white font-semibold hover:opacity-80 shadow-lg"
+						className="p-2 w-20 bg-blue-400 rounded-lg text-white font-semibold hover:opacity-80 shadow-lg mt-4 md:mt-0"
 					>
 						Add
 					</button>
 				</div>
-				<div className="m-10 w-full flex flex-col justify-center items-center">
+				<div className="md:m-10 w-full flex flex-col justify-center items-center">
 					{tasks.map((task) => (
-						<div key={task.id} className="flex w-2/3 justify-around m-4">
+						<div
+							key={task.id}
+							className="flex justify-around m-4 bg-yellow-100 w-[80%] p-4 rounded-lg"
+						>
 							<p
-								className={`text-xl w-1/2 flex items-center justify-center ${
+								className={`text-xl flex items-center justify-center w-1/2 ${
 									task.completed ? "line-through" : ""
 								}`}
 							>
 								{task.title}
 							</p>
-							<div className="w-1/2 flex justify-around items-center">
+							<div className="flex justify-around items-center gap-2 flex-wrap w-1/2">
 								<button
 									onClick={() => {
 										setEditModalStatus(true);
