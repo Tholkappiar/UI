@@ -15,5 +15,5 @@ public class Todo {
     private Long id;
 
     private String title;
-    private boolean completed = false;
+    private boolean completed;
 }
