@@ -17,7 +17,6 @@ This is a full-stack Todo App built with Spring Boot for the backend, React for 
 
 - MySql
 
-  
 ### Frontend
 
 - React
@@ -36,6 +35,17 @@ This is a full-stack Todo App built with Spring Boot for the backend, React for 
 2. Navigate to the backend directory
 3. Create a MySQL database and update the application.properties file with your database credentials
 4. Build and run the Spring Boot application
+
+### Docker Setup
+
+A Docker image for the backend has been created and hosted on Docker Hub. You can pull and run the Docker image using the following commands:
+
+    ```bash
+    docker pull tholkappiar/todo-spring
+    docker run -p 8080:8080 tholkappiar/todo-spring
+    ```
+
+This will run the Spring Boot backend application in a Docker container and expose it on port 8080.
 
 ### Frontend Setup
 
